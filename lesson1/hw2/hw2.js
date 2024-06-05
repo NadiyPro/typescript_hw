@@ -36,3 +36,50 @@ var book1 = new Books('Go where it\'s scary. That is where you will find strengt
 var book2 = new Books('Develop your brain', 536, 'Self development');
 var book3 = new Books('The monk who sold his Ferrari', 254, 'Self development');
 console.log(book1, book2, book3);
+// // - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors. Поле "автори" - являється  масивом. Кожен автор має поля name та age.
+var book1_1 = {
+    title: 'Go where it\'s scary. That is where you will find strength',
+    pageCount: 382,
+    genre: 'Self development',
+    authors: [
+        {
+            name: 'Jim Lawless',
+            age: 57
+        },
+        {
+            name: 'Jim Jim',
+            age: 60
+        }
+    ]
+};
+var book2_2 = {
+    title: 'Develop your brain',
+    pageCount: 536,
+    genre: 'Self development',
+    authors: [
+        {
+            name: 'Joe Dispenza',
+            age: 62
+        },
+        {
+            name: 'Dispenza Dispenza',
+            age: 57
+        }
+    ]
+};
+var book3_3 = {
+    title: 'The monk who sold his Ferrari',
+    pageCount: 254,
+    genre: 'Self development',
+    authors: [
+        {
+            name: 'Robin Sharma',
+            age: 59
+        },
+        {
+            name: 'Robin Robin',
+            age: 53
+        }
+    ]
+};
+console.log(book1_1, book2_2, book3_3);
