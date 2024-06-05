@@ -207,3 +207,88 @@ let weather:{weekday:string,morning:number,day:number,evening:number}[] = [
     }
 ]
 console.log(weather);
+// // Логічні розгалуження:
+// //     - Є змінна х, якій ви надаєте довільне числове значення.
+// //     Якщо змінна x не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'. Перевірте  скрипт при a, що дорівнює 1, 0, -3
+
+function stringX (x:number):string{
+    if (x!==0){
+        let a:string='Вірно'
+        console.log(a);
+    }  else {
+        let b:string='Невірно'
+        console.log(b);
+    }
+    return ;
+}
+stringX(0);
+// // - Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає число
+// // (в першу, другу, третю или четверту частину години).
+function timeCheck(time:number):string {
+    if (time > 0 && time <= 15) {
+        let timeOne:string = 'першу частину години';
+        console.log(timeOne);
+    } else if (time >= 16 && time <= 30){
+        let timeTwo:string ='другу частину години';
+        console.log(timeTwo);
+    } else if (time >= 31 && time <= 45) {
+        let timeThree:string = 'третю частину години';
+        console.log(timeThree);
+    } else if (time >= 46 && time <= 59) {
+        let timeFour:string ='четверту частину години';
+        console.log(timeFour);
+    }
+    return ;
+}
+timeCheck(30);
+// // - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
+function dayCheck(day:number):string {
+    if (day > 1 && day <= 10) {
+        let dayOne = 'першу';
+        console.log(dayOne);
+    } else if (day >= 11 && day <= 20){
+        let dayTwo = 'другу';
+        console.log(dayTwo);
+    } else if (day >= 21 && day <= 31) {
+        let dayThree = 'третю';
+        console.log(dayThree);
+    }
+    return ;
+}
+dayCheck(15)
+// // - Скласти розклад на тиждень за домопоги switch.
+// //     Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
+let  schedule:number = +prompt('Keep the serial number of the day of the week');
+switch (schedule){
+    case 1:
+        let one:string = 'Monday';
+        console.log(one);
+        break;
+    case 2:
+        let two:string = 'Tuesday';
+        console.log(two);
+        break;
+    case 3:
+        let three:string = 'Wednesday';
+        console.log(three);
+        break;
+    case 4:
+        let four:string = 'Thursday';
+        console.log(four);
+        break;
+    case 5:
+        let five:string = 'Friday';
+        console.log(five);
+        break;
+    case 6:
+        let six:string = 'Saturday';
+        console.log(six);
+        break;
+    case 7:
+        let seven:string = 'Sunday';
+        console.log(seven);
+        break;
+    default:
+        let def:string = '???';
+        console.log(def);
+}
