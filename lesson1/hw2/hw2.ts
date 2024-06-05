@@ -28,6 +28,7 @@ class Books {
         return {title,pageCount,genre}
     }
 }
+
 let book1:Books=new Books (
     'Go where it\'s scary. That is where you will find strength',
      382,
@@ -45,5 +46,87 @@ let book3:Books=new Books (
     254,
     'Self development'
 )
-
 console.log(book1,book2,book3);
+
+// // - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors. Поле "автори" - являється  масивом. Кожен автор має поля name та age.
+class BooksExtends{
+    constructor(title: string, pageCount: number, genre: string,  authors: { _name: string, _age: number}[]){
+
+    }
+}
+
+let book1_1:BooksExtends= new BooksExtends(
+    'Go where it\'s scary. That is where you will find strength',
+    382,
+    'Self development',
+    [
+        {
+            _name: 'Jim Lawless',
+            _age: 57
+        },
+        {
+            _name: 'Jim Jim',
+            _age: 60
+        }
+    ]
+)
+console.log(book1_1);
+    // function (book1_1:Books):  {title: string, pageCount: number, genre: string, authors: {_name: string, _age: number}[]} {
+    //     if (book1_1 instanceof Books){
+    //         console.log(book1_1.title,book1_1.pageCount,book1_1.genre)
+    //     }
+    //     if (book1_1 instanceof BooksExtends){
+    //         let booksExtends = book1_1 as BooksExtends;
+    //         console.log(booksExtends.title,booksExtends.pageCount,booksExtends.genre, booksExtends.authors,booksExtends._name,booksExtends._age)
+    //     }
+    // }
+
+
+
+
+//  let book1_1= {
+//     title: 'Go where it\'s scary. That is where you will find strength',
+//     pageCount: 382,
+//     genre: 'Self development',
+//     authors:[
+//         {
+//             name: 'Jim Lawless',
+//             age: 57
+//         },
+//         {
+//             name: 'Jim Jim',
+//             age: 60
+//         }
+//     ]
+// }
+// // let book2_2 = {
+//     title: 'Develop your brain',
+//     pageCount: 536,
+//     genre: 'Self development',
+//     authors:[
+//         {
+//             name: 'Joe Dispenza',
+//             age: 62
+//         },
+//         {
+//             name: 'Dispenza Dispenza',
+//             age: 57
+//         }
+//     ]
+// }
+// let book3_3 = {
+//     title: 'The monk who sold his Ferrari',
+//     pageCount: 254,
+//     genre: 'Self development',
+//     authors:[
+//         {
+//             name: 'Robin Sharma',
+//             age: 59
+//         },
+//         {
+//             name: 'Robin Robin',
+//             age: 53
+//         }
+//     ]
+// }
+// console.log(book1_1,book2_2,book3_3);
