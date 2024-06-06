@@ -4,12 +4,9 @@ var TextT = /** @class */ (function () {
         this.text = text;
     }
     TextT.prototype.textFunction = function () {
-        for (var i = 0; i < 10; i++) {
-            var blocks = text[i];
-            var div = document.createElement('div');
-            div.innerHTML = JSON.stringify("<p>".concat(blocks, "</p>"));
-            document.body.appendChild(div);
-        }
+        var div = document.createElement('div');
+        div.textContent = this.text;
+        document.body.appendChild(div);
         return;
     };
     return TextT;
@@ -27,3 +24,7 @@ var text = [
     new TextT('Lorem ipsum dolor sit amet.')
 ];
 text.forEach(function (value) { value.textFunction(); });
+// text.forEach(value=> {
+//     let blocks:TextT=new TextT (value.text)
+//     blocks.textFunction()
+// });
