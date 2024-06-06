@@ -208,3 +208,78 @@ function stringX(x) {
     return;
 }
 stringX(0);
+// // - Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає число
+// // (в першу, другу, третю или четверту частину години).
+function timeCheck(time) {
+    if (time > 0 && time <= 15) {
+        var timeOne = 'першу частину години';
+        console.log(timeOne);
+    }
+    else if (time >= 16 && time <= 30) {
+        var timeTwo = 'другу частину години';
+        console.log(timeTwo);
+    }
+    else if (time >= 31 && time <= 45) {
+        var timeThree = 'третю частину години';
+        console.log(timeThree);
+    }
+    else if (time >= 46 && time <= 59) {
+        var timeFour = 'четверту частину години';
+        console.log(timeFour);
+    }
+    return;
+}
+timeCheck(30);
+// // - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
+function dayCheck(day) {
+    if (day > 1 && day <= 10) {
+        var dayOne = 'першу';
+        console.log(dayOne);
+    }
+    else if (day >= 11 && day <= 20) {
+        var dayTwo = 'другу';
+        console.log(dayTwo);
+    }
+    else if (day >= 21 && day <= 31) {
+        var dayThree = 'третю';
+        console.log(dayThree);
+    }
+    return;
+}
+dayCheck(15);
+// // - Скласти розклад на тиждень за домопоги switch.
+// //     Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
+var schedule = +prompt('Keep the serial number of the day of the week');
+switch (schedule) {
+    case 1:
+        var one = 'Monday';
+        console.log(one);
+        break;
+    case 2:
+        var two = 'Tuesday';
+        console.log(two);
+        break;
+    case 3:
+        var three = 'Wednesday';
+        console.log(three);
+        break;
+    case 4:
+        var four = 'Thursday';
+        console.log(four);
+        break;
+    case 5:
+        var five = 'Friday';
+        console.log(five);
+        break;
+    case 6:
+        var six = 'Saturday';
+        console.log(six);
+        break;
+    case 7:
+        var seven = 'Sunday';
+        console.log(seven);
+        break;
+    default:
+        var def = '???';
+        console.log(def);
+}
