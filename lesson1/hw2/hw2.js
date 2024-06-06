@@ -283,3 +283,27 @@ switch (schedule) {
         var def = '???';
         console.log(def);
 }
+// // - Користувач вводить або має два числа.
+// //     Потрібно знайти та вивести максимальне число з тих двох .
+// //     Також потрібно врахувати коли введені рівні числа.
+// // варіант 1 рішення через ternary
+var number1_1 = +prompt('Enter a number 1');
+var number1_2 = +prompt('Enter a number 2');
+var number_ = number1_1 >= number1_2 ? number1_1 : number1_2;
+console.log(number_);
+// // варіант 2 рішення через if
+function num(number2_1, number2_2) {
+    if (number2_1 > number2_2) {
+        console.log(number2_1);
+    }
+    else if (number2_1 < number2_2) {
+        console.log(number2_2);
+    }
+    else if (number2_1 === number2_2) {
+        console.log(number2_1);
+    }
+    return number2_1 | number2_2;
+}
+var number2_1 = +prompt('Enter a number 1');
+var number2_2 = +prompt('Enter a number 2');
+num(number2_1, number2_2);

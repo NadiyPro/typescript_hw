@@ -292,3 +292,103 @@ switch (schedule){
         let def:string = '???';
         console.log(def);
 }
+// // - Користувач вводить або має два числа.
+// //     Потрібно знайти та вивести максимальне число з тих двох .
+// //     Також потрібно врахувати коли введені рівні числа.
+
+// // варіант 1 рішення через ternary
+let number1_1:number = +prompt('Enter a number 1');
+let number1_2:number = +prompt('Enter a number 2');
+let number_:number = number1_1>=number1_2 ? number1_1 : number1_2;
+console.log(number_);
+
+// // варіант 2 рішення через if
+function num(number2_1:number,number2_2:number):number {
+    if (number2_1>number2_2){
+        console.log(number2_1);
+    } else if (number2_1<number2_2){
+        console.log(number2_2);
+    } else if (number2_1===number2_2){
+        console.log(number2_1);
+    }
+    return number2_1 | number2_2
+}
+let number2_1:number = +prompt('Enter a number 1');
+let number2_2:number = +prompt('Enter a number 2');
+num (number2_1,number2_2);
+// // - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
+// //     буде присвоювати змінній х значення "default"  якщо ви намагаєтесь присвоїти в неї falsy-значення (хибноподібні, тобто ті, які приводиться до false, а це 0 null undefined і тд).
+// // варіант рішення 1
+let xx:boolean = false;
+if(!xx){
+    console.log('default');
+}
+// // варіант рішення 2
+let xxx:any = false;
+xxx = xxx || 'default';
+console.log(xxx);
+// // - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray.
+// //     За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
+class Course {
+
+
+    constructor(public title:string,public monthDuration:number ) {
+
+    }
+    checkDuration() {
+        if (this.monthDuration >= 5) {
+            console.log('Супер');
+        } else {
+            console.log('Погано');
+        }
+    }
+}
+
+let coursesAndDurationArray: Course[] = [
+    new Course('JavaScript Complex', 5),
+    new Course('Java Complex', 6),
+    new Course('Python Complex', 6),
+    new Course('QA Complex', 4),
+    new Course('FullStack', 7),
+    new Course('Frontend', 4)
+];
+
+
+// let coursesAndDurationArray = [
+//     {title: 'JavaScript Complex', monthDuration: 5},
+//     {title: 'Java Complex', monthDuration: 6},
+//     {title: 'Python Complex', monthDuration: 6},
+//     {title: 'QA Complex', monthDuration: 4},
+//     {title: 'FullStack', monthDuration: 7},
+//     {title: 'Frontend', monthDuration: 4}
+// ];
+// if (coursesAndDurationArray[0].monthDuration >= 5){
+//     console.log('Супер');
+// } else {
+//     console.log('Погано')
+// }
+// if (coursesAndDurationArray[1].monthDuration >= 5){
+//     console.log('Супер');
+// } else {
+//     console.log('Погано')
+// }
+// if (coursesAndDurationArray[2].monthDuration >= 5){
+//     console.log('Супер');
+// } else {
+//     console.log('Погано')
+// }
+// if (coursesAndDurationArray[3].monthDuration >= 5){
+//     console.log('Супер');
+// } else {
+//     console.log('Погано')
+// }
+// if (coursesAndDurationArray[4].monthDuration >= 5){
+//     console.log('Супер');
+// } else {
+//     console.log('Погано')
+// }
+// if (coursesAndDurationArray[5].monthDuration >= 5){
+//     console.log('Супер');
+// } else {
+//     console.log('Погано')
+// }
