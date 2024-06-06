@@ -4,14 +4,14 @@ class TextT {
     constructor(public text:string) {
     }
     textFunction ():string{
-        for (let i:number=0;i<10;i++){
-            let blocks:any = this[i];
             let div:HTMLElement = document.createElement('div');
-            div.innerHTML=`<p>${blocks}</p>`
+            div.innerHTML=JSON.stringify(`<p>${this}</p>`)
             document.body.appendChild(div)
-        } return ;
+            return;
     }
 }
+
+
 let text:TextT[] = [
    new TextT ('Lorem ipsum dolor sit amet.'),
    new TextT ('Lorem ipsum dolor sit amet.'),
@@ -24,4 +24,8 @@ let text:TextT[] = [
    new TextT ('Lorem ipsum dolor sit amet.'),
    new TextT ('Lorem ipsum dolor sit amet.')
 ];
-text.forEach(value=> {value.textFunction()});
+text.forEach(value=> {
+    let blocks:TextT=new TextT (value.text)
+    blocks.textFunction()
+});
+

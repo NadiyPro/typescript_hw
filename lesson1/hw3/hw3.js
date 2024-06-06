@@ -5,9 +5,9 @@ var TextT = /** @class */ (function () {
     }
     TextT.prototype.textFunction = function () {
         for (var i = 0; i < 10; i++) {
-            var blocks = this[i];
+            var blocks = text[i];
             var div = document.createElement('div');
-            div.innerHTML = "<p>".concat(blocks, "</p>");
+            div.innerHTML = JSON.stringify("<p>".concat(blocks, "</p>"));
             document.body.appendChild(div);
         }
         return;
