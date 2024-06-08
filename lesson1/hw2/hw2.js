@@ -1,6 +1,6 @@
 // // Масиви та об'єкти:
 // // - Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
-var music = [
+let music = [
     'pop',
     'rock',
     'rap',
@@ -23,21 +23,20 @@ console.log(music[7]);
 console.log(music[8]);
 console.log(music[9]);
 // // - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.
-var Books = /** @class */ (function () {
-    function Books(title, pageCount, genre) {
+class Books {
+    constructor(title, pageCount, genre) {
         this.title = title;
         this.pageCount = pageCount;
         this.genre = genre;
-        return { title: title, pageCount: pageCount, genre: genre };
+        return { title, pageCount, genre };
     }
-    return Books;
-}());
-var book1 = new Books('Go where it\'s scary. That is where you will find strength', 382, 'Self development');
-var book2 = new Books('Develop your brain', 536, 'Self development');
-var book3 = new Books('The monk who sold his Ferrari', 254, 'Self development');
+}
+let book1 = new Books('Go where it\'s scary. That is where you will find strength', 382, 'Self development');
+let book2 = new Books('Develop your brain', 536, 'Self development');
+let book3 = new Books('The monk who sold his Ferrari', 254, 'Self development');
 console.log(book1, book2, book3);
 // // - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors. Поле "автори" - являється  масивом. Кожен автор має поля name та age.
-var book1_1 = {
+let book1_1 = {
     title: 'Go where it\'s scary. That is where you will find strength',
     pageCount: 382,
     genre: 'Self development',
@@ -52,7 +51,7 @@ var book1_1 = {
         }
     ]
 };
-var book2_2 = {
+let book2_2 = {
     title: 'Develop your brain',
     pageCount: 536,
     genre: 'Self development',
@@ -67,7 +66,7 @@ var book2_2 = {
         }
     ]
 };
-var book3_3 = {
+let book3_3 = {
     title: 'The monk who sold his Ferrari',
     pageCount: 254,
     genre: 'Self development',
@@ -84,7 +83,7 @@ var book3_3 = {
 };
 console.log(book1_1, book2_2, book3_3);
 // // - Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача
-var users = [
+let users = [
     {
         name: 'Nadia',
         username: 'userNadia',
@@ -148,7 +147,7 @@ console.log(users[8]['password']);
 console.log(users[9]['password']);
 // // - описати масив, в якому буде зберігатись інформація про температуру вранці, вдень і ввечері за термін в 7 днів.
 // Як зробити цей масив - вам потрібно подумати. Нормальних варіантів опису - 2. Варіант, коли в вас буде одновимірний масив з 21 значенням вичключаємо одразу
-var weather = [
+let weather = [
     {
         weekday: 'Monday',
         morning: 11,
@@ -198,11 +197,11 @@ console.log(weather);
 // //     Якщо змінна x не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'. Перевірте  скрипт при a, що дорівнює 1, 0, -3
 function stringX(x) {
     if (x !== 0) {
-        var a = 'Вірно';
+        let a = 'Вірно';
         console.log(a);
     }
     else {
-        var b = 'Невірно';
+        let b = 'Невірно';
         console.log(b);
     }
     return;
@@ -212,19 +211,19 @@ stringX(0);
 // // (в першу, другу, третю или четверту частину години).
 function timeCheck(time) {
     if (time > 0 && time <= 15) {
-        var timeOne = 'першу частину години';
+        let timeOne = 'першу частину години';
         console.log(timeOne);
     }
     else if (time >= 16 && time <= 30) {
-        var timeTwo = 'другу частину години';
+        let timeTwo = 'другу частину години';
         console.log(timeTwo);
     }
     else if (time >= 31 && time <= 45) {
-        var timeThree = 'третю частину години';
+        let timeThree = 'третю частину години';
         console.log(timeThree);
     }
     else if (time >= 46 && time <= 59) {
-        var timeFour = 'четверту частину години';
+        let timeFour = 'четверту частину години';
         console.log(timeFour);
     }
     return;
@@ -233,15 +232,15 @@ timeCheck(30);
 // // - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
 function dayCheck(day) {
     if (day > 1 && day <= 10) {
-        var dayOne = 'першу';
+        let dayOne = 'першу';
         console.log(dayOne);
     }
     else if (day >= 11 && day <= 20) {
-        var dayTwo = 'другу';
+        let dayTwo = 'другу';
         console.log(dayTwo);
     }
     else if (day >= 21 && day <= 31) {
-        var dayThree = 'третю';
+        let dayThree = 'третю';
         console.log(dayThree);
     }
     return;
@@ -249,47 +248,47 @@ function dayCheck(day) {
 dayCheck(15);
 // // - Скласти розклад на тиждень за домопоги switch.
 // //     Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
-var schedule = +prompt('Keep the serial number of the day of the week');
+let schedule = +prompt('Keep the serial number of the day of the week');
 switch (schedule) {
     case 1:
-        var one = 'Monday';
+        let one = 'Monday';
         console.log(one);
         break;
     case 2:
-        var two = 'Tuesday';
+        let two = 'Tuesday';
         console.log(two);
         break;
     case 3:
-        var three = 'Wednesday';
+        let three = 'Wednesday';
         console.log(three);
         break;
     case 4:
-        var four = 'Thursday';
+        let four = 'Thursday';
         console.log(four);
         break;
     case 5:
-        var five = 'Friday';
+        let five = 'Friday';
         console.log(five);
         break;
     case 6:
-        var six = 'Saturday';
+        let six = 'Saturday';
         console.log(six);
         break;
     case 7:
-        var seven = 'Sunday';
+        let seven = 'Sunday';
         console.log(seven);
         break;
     default:
-        var def = '???';
+        let def = '???';
         console.log(def);
 }
 // // - Користувач вводить або має два числа.
 // //     Потрібно знайти та вивести максимальне число з тих двох .
 // //     Також потрібно врахувати коли введені рівні числа.
 // // варіант 1 рішення через ternary
-var number1_1 = +prompt('Enter a number 1');
-var number1_2 = +prompt('Enter a number 2');
-var number_ = number1_1 >= number1_2 ? number1_1 : number1_2;
+let number1_1 = +prompt('Enter a number 1');
+let number1_2 = +prompt('Enter a number 2');
+let number_ = number1_1 >= number1_2 ? number1_1 : number1_2;
 console.log(number_);
 // // варіант 2 рішення через if
 function num(number2_1, number2_2) {
@@ -304,38 +303,37 @@ function num(number2_1, number2_2) {
     }
     return number2_1 | number2_2;
 }
-var number2_1 = +prompt('Enter a number 1');
-var number2_2 = +prompt('Enter a number 2');
+let number2_1 = +prompt('Enter a number 1');
+let number2_2 = +prompt('Enter a number 2');
 num(number2_1, number2_2);
 // // - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
 // //     буде присвоювати змінній х значення "default"  якщо ви намагаєтесь присвоїти в неї falsy-значення (хибноподібні, тобто ті, які приводиться до false, а це 0 null undefined і тд).
 // // варіант рішення 1
-var xx = false;
+let xx = false;
 if (!xx) {
     console.log('default');
 }
 // // варіант рішення 2
-var xxx = false;
+let xxx = false;
 xxx = xxx || 'default';
 console.log(xxx);
 // // - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray.
 // //     За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
-var Course = /** @class */ (function () {
-    function Course(title, monthDuration) {
+class Course {
+    constructor(title, monthDuration) {
         this.title = title;
         this.monthDuration = monthDuration;
     }
-    Course.prototype.checkDuration = function () {
+    checkDuration() {
         if (this.monthDuration >= 5) {
             console.log('Супер');
         }
         else {
             console.log('Погано');
         }
-    };
-    return Course;
-}());
-var coursesAndDurationArray = [
+    }
+}
+let coursesAndDurationArray = [
     new Course('JavaScript Complex', 5),
     new Course('Java Complex', 6),
     new Course('Python Complex', 6),
@@ -343,4 +341,4 @@ var coursesAndDurationArray = [
     new Course('FullStack', 7),
     new Course('Frontend', 4)
 ];
-coursesAndDurationArray.forEach(function (course) { return course.checkDuration(); });
+coursesAndDurationArray.forEach(course => course.checkDuration());
