@@ -30,35 +30,34 @@ text.forEach(function (value) { value.textFunction(); });
 // });
 // // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
 var TextIndex = /** @class */ (function () {
-    function TextIndex(textIndex) {
-        this.textIndex = textIndex;
+    function TextIndex(text) {
+        this.text = text;
+        this.text = text;
     }
-    TextIndex.prototype.textIndexFunction = function () {
-        var divIndex = document.createElement('div');
-        // divIndex.innerHTML=this.textIndex;
-        divIndex.textContent = this.textIndex;
-        document.body.appendChild(divIndex);
-        return;
+    TextIndex.prototype.generateElements = function () {
+        var basicDiv = document.createElement('div');
+        document.body.appendChild(basicDiv);
+        for (var i = 0; i < this.text.length; i++) {
+            var p = document.createElement('p');
+            p.textContent = "".concat(i + 1, " ").concat(this.text[i]);
+            basicDiv.appendChild(p);
+        }
+        return basicDiv;
     };
     return TextIndex;
 }());
 var textIndex = [
-    new TextIndex('Lorem ipsum dolor sit amet.'),
-    new TextIndex('Lorem ipsum dolor sit amet.'),
-    new TextIndex('Lorem ipsum dolor sit amet.'),
-    new TextIndex('Lorem ipsum dolor sit amet.'),
-    new TextIndex('Lorem ipsum dolor sit amet.'),
-    new TextIndex('Lorem ipsum dolor sit amet.'),
-    new TextIndex('Lorem ipsum dolor sit amet.'),
-    new TextIndex('Lorem ipsum dolor sit amet.'),
-    new TextIndex('Lorem ipsum dolor sit amet.'),
-    new TextIndex('Lorem ipsum dolor sit amet.')
+    'Lorem ipsum dolor sit amet.',
+    'Lorem ipsum dolor sit amet.',
+    'Lorem ipsum dolor sit amet.',
+    'Lorem ipsum dolor sit amet.',
+    'Lorem ipsum dolor sit amet.',
+    'Lorem ipsum dolor sit amet.',
+    'Lorem ipsum dolor sit amet.',
+    'Lorem ipsum dolor sit amet.',
+    'Lorem ipsum dolor sit amet.',
+    'Lorem ipsum dolor sit amet.'
 ];
-for (var i = 0; i < 10; i++) {
-    var finishText = new TextIndex("".concat(i + 1, " ").concat(textIndex[i]));
-    finishText.textIndexFunction();
-}
-// for (let i:number=0;i<10;i++){
-//     let finishText:TextIndex = new TextIndex(`${i+1} ${textIndex[i]}`)
-//     finishText.textIndexFunction();
-// }
+var textIndexInst = new TextIndex(textIndex);
+var elements = textIndexInst.generateElements();
+document.body.appendChild(elements);
